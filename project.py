@@ -1,12 +1,13 @@
 import random
 from mido import Message, MidiFile, MidiTrack
 import pygame
-
-
+import sys
 
 #En base a un tono y tipo de escala, genera un 
 # acorde con su progresion
 def generador_progresion(key: str, tipo_escala:str):
+
+    notas = ["C","D","E","F","G","A","B"]
 
     #Lista de grados de escala mayores y menores
 
@@ -15,7 +16,17 @@ def generador_progresion(key: str, tipo_escala:str):
 
     #Si el acorde es mayo devuelve la lista de escala mayor, 
     # de lo contrario la lista de grados de escala menor
+
+    if not key in notas:
+        raise ValueError("La nota ingresada no es válida")
+
+    if not tipo_escala == "mayor" and not tipo_escala == "menor":
+        sys.exit("El tipo de escal no es valida")
+
     acordes = grado_mayor if tipo_escala == "mayor" else grado_menor
+   
+        
+  
 
     #Selecciona 4 acordes random de la escala seleccionada
     progresion = random.sample(acordes, 4)
@@ -50,8 +61,8 @@ def grabar_progresion_MIDI(progresion, file_name = "progresion.mid"):
         pista.append(Message("note_on", note=nota, velocity=64, time=0))
         pista.append(Message("note_off", note=nota, velocity=64, time=480))
 
-        midi.save(file_name)
-        print(f"La progresión se guardo en {file_name}")
+    midi.save(file_name)
+    print(f"La progresión se guardo en {file_name}")
 
 
 #Función para reproducir el archivo
@@ -73,11 +84,10 @@ def reproductor(file_name):
     print(f"La reproducción de {file_name} ha finalizado")
 
 
-
 def main():
 
-    tono= input("Ingrese la tonalidad,  (Por Ejemplo: C, D, A): ")
-    escala = input("Ingrese si el tipo de escala es mayor o menor: ")
+    tono= input("Ingrese la tonalidad,  (Por Ejemplo: C, D, A): ").upper()
+    escala = input("Ingrese si el tipo de escala es mayor o menor: ").lower()
 
 
     progresion = generador_progresion(tono, escala)
