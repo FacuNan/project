@@ -22,14 +22,12 @@ El proyecto utiliza bibliotecas como `pygame` y `mido` para gestionar la creaci√
 #### Uso:
 1. **Clonar el repositorio**:
 
-[Repositorio Github:] (https://github.com/FacuNan/project.git)
+Repositorio Github: https://github.com/FacuNan/project.git
 
 2. **Instalar las dependencias**:
 Aseg√∫rate de tener Python instalado. Luego, instala las bibliotecas necesarias con:
 
 pip install -r requirements.txt
-
-[Ver dependencias:] (docs/requirements.txt)
 
 3. **Ejecutar el programa**:
 Ejecuta el archivo principal del proyecto:
