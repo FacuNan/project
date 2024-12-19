@@ -29,6 +29,7 @@ Asegúrate de tener Python instalado. Luego, instala las bibliotecas necesarias 
 
 pip install -r requirements.txt
 
+
 3. **Ejecutar el programa**:
 Ejecuta el archivo principal del proyecto:
 

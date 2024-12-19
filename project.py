@@ -48,8 +48,8 @@ def grabar_progresion_MIDI(progresion, file_name = "progresion.mid"):
         pista.append(Message("note_on", note=nota, velocity=64, time=0))
         pista.append(Message("note_off", note=nota, velocity=64, time=480))
 
-        midi.save(file_name)
-        print(f"La progresión se guardo en {file_name}")
+    midi.save(file_name)
+    print(f"La progresión se guardo en {file_name}")
 
 
 #Función para reproducir el archivo
@@ -88,6 +88,8 @@ def main():
     if opcion_reproducir == "s":
         file = "progresion.mid"
         reproductor(file)
+
+   
 
 if __name__ == "__main__":
     main()
