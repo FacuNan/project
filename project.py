@@ -1,8 +1,8 @@
 import random
 from mido import Message, MidiFile, MidiTrack
 import pygame
-from pydub import AudioSegment
-import os
+
+
 
 #En base a un tono y tipo de escala, genera un 
 # acorde con su progresion
@@ -74,23 +74,6 @@ def reproductor(file_name):
 
 
 
-
-def convertir_audio(origen, nuevo_formato="mp3"):
-    try:
-        #Se carga el archivo para realizar el cambio del formato
-        audio = AudioSegment.from_file(origen, format ="midi")
-        #Fragmenta el archvo y cambia la extensión
-        nuevo_audio = os.path.splitext(origen[0] + f"{nuevo_formato}")
-
-        audio.export(nuevo_audio, format= nuevo_formato)
-        return nuevo_audio
-    except Exception as e:
-        print(f"No se pudo convertir el archivo, {e}")
-
-
-
-
-
 def main():
 
     tono= input("Ingrese la tonalidad,  (Por Ejemplo: C, D, A): ")
@@ -108,13 +91,6 @@ def main():
     if opcion_reproducir == "s":
         file = "progresion.mid"
         reproductor(file)
-
-    opcion_convertir = input("¿Deseas cambiar el formato? (s/n): ").lower()
-
-    if opcion_convertir == "s":
-        formato = input("Ingrese el tipo de formato: ").strip().lower()
-        convertir_audio(file, formato)
-
 
 
 if __name__ == "__main__":
