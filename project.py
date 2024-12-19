@@ -75,7 +75,7 @@ def reproductor(file_name):
 
 
 
-def convertir_audio(origen, nuevo_formato="wav"):
+def convertir_audio(origen, nuevo_formato="mp3"):
     try:
         #Se carga el archivo para realizar el cambio del formato
         audio = AudioSegment.from_file(origen, format ="midi")
