@@ -6,6 +6,7 @@ import sys
 #En base a un tono y tipo de escala, genera un 
 # acorde con su progresion
 def generador_progresion(key: str, tipo_escala:str):
+
     notas = ["C","D","E","F","G","A","B"]
 
     #Lista de grados de escala mayores y menores
@@ -86,7 +87,7 @@ def reproductor(file_name):
 def main():
 
     tono= input("Ingrese la tonalidad,  (Por Ejemplo: C, D, A): ").upper()
-    escala = input("Ingrese si el tipo de escala es mayor o menor: ")
+    escala = input("Ingrese si el tipo de escala es mayor o menor: ").lower()
 
 
     progresion = generador_progresion(tono, escala)
