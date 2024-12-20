@@ -5,10 +5,11 @@ from unittest.mock import patch
 def test_generador_progresion():
     progresion = generador_progresion("A", "mayor")
     assert len(progresion) == 4
-    assert all(acorde.startswith("A-") for acorde in progresion)
+    acordes_validos = {"A-I", "B-II", "C#-III", "D-IV", "E-V", "F#m-VI", "G#dim-VII"}
+    assert all(acorde in acordes_validos for acorde in progresion)
 
 def test_grabar_progresion_MIDI(tmp_path):
-    progresion = ["C-I", "C-IV", "C-V", "C-vi"]
+    progresion = ["C-I", "F-IV", "G-V", "C-VI"]
     file = tmp_path / "test_progresion.mid"
     grabar_progresion_MIDI(progresion, str(file))
 
