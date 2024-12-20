@@ -1,55 +1,95 @@
-# Generador de Progresiones Musicales en Python
+# Generador de Progresiones Armónicas MIDI
 
-#### Video Demo: https://youtu.be/tu-video-aqui
+#### Video Demo: [URL del video aquí]
+
+---
 
 #### Descripción:
-El **Generador de Progresiones Musicales en Python** es una herramienta que permite a los usuarios crear progresiones de acordes aleatorias en formato MIDI, basadas en una tonalidad y tipo de escala especificados. Además, permite guardar las progresiones generadas y reproducirlas directamente desde la aplicación.
 
-El proyecto utiliza bibliotecas como `pygame` y `mido` para gestionar la creación y reproducción de archivos MIDI, lo que lo hace ideal para músicos, compositores, o cualquier persona interesada en explorar progresiones musicales.
+El **Generador de Progresiones Armónicas MIDI** es una herramienta diseñada para músicos, compositores y entusiastas de la música que buscan crear progresiones armónicas de manera rápida y eficiente. Este proyecto permite generar progresiones basadas en las escalas mayores o menores, siguiendo una estructura comúnmente utilizada en la música occidental.
 
-#### Características:
-- Generación aleatoria de progresiones musicales según la tonalidad y escala seleccionadas.
-- Guardado automático de las progresiones en formato MIDI.
-- Reproducción directa de los archivos MIDI generados.
-- Código modular y bien estructurado, facilitando la ampliación o personalización del programa.
+### Funcionalidad Principal:
 
-#### Tecnologías:
+El programa genera progresiones armónicas en formato MIDI con la siguiente estructura clásica:
+- **Tónica (I)**: El punto de inicio, representando la estabilidad tonal.
+- **Subdominante (IV)**: Aporta movimiento hacia la tensión.
+- **Dominante (V)**: Crea tensión que busca resolución.
+- **Tónica (I)**: Retorno a la estabilidad inicial.
+
+Adicionalmente, soporta escalas mayores y menores, asegurando flexibilidad para adaptarse a distintos estilos y tonalidades musicales.
+
+### Características:
+
+1. **Generación de Progresiones**:
+   - El usuario puede seleccionar la tonalidad base y el modo (mayor o menor).
+   - Se genera automáticamente una progresión clásica I-IV-V-I.
+
+2. **Exportación a MIDI**:
+   - La progresión generada se guarda en un archivo `.mid` que puede ser utilizado en software de producción musical.
+
+3. **Reproducción Integrada**:
+   - El programa incluye una función para reproducir la progresión directamente desde la terminal.
+
+4. **Ampliable**:
+   - Código modular que permite futuras expansiones, como añadir nuevos tipos de progresiones o modos musicales.
+
+### Tecnologías Utilizadas:
+
 - **Python**: Lenguaje principal del proyecto.
-- **Bibliotecas**:
-  - `pygame`: Para la reproducción de archivos MIDI.
-  - `mido`: Para la creación y manejo de archivos MIDI.
+- **mido**: Para la creación y manipulación de archivos MIDI.
+- **pygame**: Para la reproducción de archivos de audio MIDI.
+- **pytest**: Para pruebas unitarias y garantizar la calidad del código.
 
-#### Uso:
-1. **Clonar el repositorio**:
+### Instalación y Uso:
 
-Repositorio Github: https://github.com/FacuNan/project.git
+1. Clonar el repositorio:
+   ```bash
+   git clone https://github.com/FacuNan/project.git
+   cd proyecto
+   ```
 
-2. **Instalar las dependencias**:
-Asegúrate de tener Python instalado. Luego, instala las bibliotecas necesarias con:
+2. Instalar las dependencias:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-pip install -r requirements.txt
+3. Ejecutar el programa:
+   ```bash
+   python project.py
+   ```
+
+4. Para pruebas unitarias:
+   ```bash
+   pytest
+   ```
+
+### Ejemplo de Uso:
+
+- **Generación de Progresión en A Mayor**:
+   ```
+   Se ingresó la progresión: ['A-I', 'A-IV', 'A-V', 'A-I']
+   La progresión se guardó en progresion.mid
+   ¿Desea reproducir la progresión? (s/n): s
+   Reproduciendo progresion.mid...
+   ```
+
+### Próximos Pasos:
+
+- Añadir soporte para progresiones personalizadas introducidas por el usuario.
+- Implementar más modos y escalas (e.g., modos griegos).
+- Mejorar la interfaz gráfica para usuarios sin experiencia en programación.
+
+### Créditos:
+
+- **Nombre del Autor:** Facundo Comercio
+- **GitHub:** FacuNan
+- **Ciudad y País:** La Plat, Buenos Aires, Argentina
+- **Fecha de Creación:** 20/12/2024
+
+¡Gracias por explorar este proyecto! Si tienes comentarios o sugerencias, no dudes en contactarme.
 
 
-3. **Ejecutar el programa**:
-Ejecuta el archivo principal del proyecto:
 
-python project.py
-
-4. **Instrucciones en pantalla**:
-El programa te guiará paso a paso para seleccionar una tonalidad, tipo de escala, y generar la progresión musical.
-
-#### Notas:
-- Este proyecto no incluye la funcionalidad de conversión de MIDI a otros formatos de audio (como WAV o MP3) debido a problemas técnicos encontrados durante el desarrollo.
-- Asegúrate de tener configurado un sintetizador MIDI en tu sistema operativo para una correcta reproducción de los archivos.
-
-#### Estructura del proyecto:
-- **`project.py`**: Archivo principal del programa.
-- **`requirements.txt`**: Lista de dependencias del proyecto.
-- **`test_project.py`**: Archivo de pruebas automatizadas usando `pytest`.
-
-#### Próximos pasos:
-- Agregar soporte para conversión de archivos MIDI a otros formatos de audio.
-- Ampliar las opciones de generación de progresiones con más tipos de escalas y acordes.
 
 
 

@@ -55,11 +55,10 @@ def grabar_progresion_MIDI(progresion, file_name = "progresion.mid"):
     }
 
 
-    #Recorre la progrsion y la guarda en el archivo
+    #Recorre la progresion y la guarda en el archivo
     for acorde in progresion:
 
         tono = acorde.split("-")[0]
-
         nota = note_mapping.get(tono.upper(), 60) #Busca la nota
 
         pista.append(Message("note_on", note=nota, velocity=64, time=0))
