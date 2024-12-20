@@ -1,12 +1,11 @@
-import random
 from mido import Message, MidiFile, MidiTrack
 import pygame
-import sys
+
 
 #En base a un tono y tipo de escala, genera un 
 # acorde con su progresion
 def generador_progresion(tonalidad, modo="mayor"):
-    # Definimos las progresiones estándar para mayores y menores
+   
     grados_mayores = {
         "I": 0,  # Tónica
         "IV": 5,  # Subdominante
