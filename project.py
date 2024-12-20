@@ -105,7 +105,6 @@ def main():
         file = "progresion.mid"
         reproductor(file)
 
-   
 
 if __name__ == "__main__":
     main()
