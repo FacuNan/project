@@ -1,6 +1,6 @@
 # Generador de Progresiones Armónicas MIDI
 
-#### Video Demo: [URL del video aquí]
+#### Video Demo: [https://youtu.be/YyuBm2CYDQA]
 
 ---
 
@@ -83,7 +83,8 @@ Adicionalmente, soporta escalas mayores y menores, asegurando flexibilidad para 
 
 - **Nombre del Autor:** Facundo Comercio
 - **GitHub:** FacuNan
-- **Ciudad y País:** La Plat, Buenos Aires, Argentina
+  **EDX:** Facundocomercio1991
+- **Ciudad y País:** La Plata, Buenos Aires, Argentina
 - **Fecha de Creación:** 20/12/2024
 
 ¡Gracias por explorar este proyecto! Si tienes comentarios o sugerencias, no dudes en contactarme.
