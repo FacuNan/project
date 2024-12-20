@@ -5,34 +5,39 @@ import sys
 
 #En base a un tono y tipo de escala, genera un 
 # acorde con su progresion
-def generador_progresion(key: str, tipo_escala:str):
+def generador_progresion(tonalidad, modo="mayor"):
+    # Definimos las progresiones estándar para mayores y menores
+    grados_mayores = {
+        "I": 0,  # Tónica
+        "IV": 5,  # Subdominante
+        "V": 7   # Dominante
+    }
 
-    notas = ["C","D","E","F","G","A","B"]
+    grados_menores = {
+        "i": 0,  # Tónica
+        "iv": 5,  # Subdominante
+        "v": 7   # Dominante (puede ser mayor en menor armónica)
+    }
 
-    #Lista de grados de escala mayores y menores
+    # Seleccionamos los grados según el modo
+    grados = grados_mayores if modo.lower() == "mayor" else grados_menores
 
-    grado_mayor = ["I", "ii", "iii", "IV", "V", "vi", "vii"]
-    grado_menor = ["i", "II", "III", "iv", "v", "VI", "VII"]
+    # Mapeo de notas para cada tono
+    notas = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"]
+    
+    # Encuentra el índice de la tonalidad
+    indice_tonica = notas.index(tonalidad.upper())
 
-    #Si el acorde es mayo devuelve la lista de escala mayor, 
-    # de lo contrario la lista de grados de escala menor
+    # Genera los acordes en la progresión
+    progresion = [
+        notas[(indice_tonica + grados[grado]) % 12] + f"-{grado}"
+        for grado in grados
+    ]
 
-    if not key in notas:
-        raise ValueError("La nota ingresada no es válida")
+    # Añade la tónica al final para cerrar la progresión
+    progresion.append(progresion[0])
 
-    if not tipo_escala == "mayor" and not tipo_escala == "menor":
-        sys.exit("El tipo de escal no es valida")
-
-    acordes = grado_mayor if tipo_escala == "mayor" else grado_menor
-   
-        
-  
-
-    #Selecciona 4 acordes random de la escala seleccionada
-    progresion = random.sample(acordes, 4)
-
-    #Retorna una lista de acordes y sus progresiones
-    return [f"{key}-{acorde}" for acorde in progresion]
+    return progresion
 
 
 
