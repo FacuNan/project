@@ -1,6 +1,6 @@
 # Generador de Progresiones Armónicas MIDI
 
-#### Video Demo: [https://youtu.be/YyuBm2CYDQA]
+#### Video Demo: https://youtu.be/YyuBm2CYDQA
 
 ---
 
