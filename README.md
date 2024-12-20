@@ -45,7 +45,7 @@ Adicionalmente, soporta escalas mayores y menores, asegurando flexibilidad para 
 1. Clonar el repositorio:
    ```bash
    git clone https://github.com/FacuNan/project.git
-   cd proyecto
+   cd project
    ```
 
 2. Instalar las dependencias:
